@@ -10,10 +10,10 @@ constructor(public message:string){}
 ////////////
  function GetAllOfBooks(){
      let books =[
-         {title:"Reino de este Mundo", author:"Alejo Carpentier",available:true, category:Category.History },
-         {title:"Viaje al centro de la tierra", author:"Julio Verne",available:false, category:Category.Fiction },
-         {title:"Paradizo", author:"Jose Lezama",available:true, category:Category.Biography },
-         {title:'Silencios',author:'Karla Suárez', available:true,category:Category.Biography}
+         {id: 1, title:"Reino de este Mundo", author:"Alejo Carpentier",available:true, category:Category.History },
+         {id: 2, title:"Viaje al centro de la tierra", author:"Julio Verne",available:false, category:Category.Fiction },
+         {id: 3, title:"Paradizo", author:"Jose Lezama",available:true, category:Category.Biography },
+         {id: 4, title:'Silencios',author:'Karla Suárez', available:true,category:Category.Biography}
      ];
 
      return books;
@@ -23,7 +23,7 @@ const allBooks = GetAllOfBooks();////
 //allBooks.push({title:'Silencios',author:'Karla Suárez', available:true});
 
 ////////////
-function LogFirstAvailable(books):void{
+function LogFirstAvailable(books=GetAllOfBooks()):void{
     
     let cantofBooks: number= books.length;
     let firtsAvailable: string="";
@@ -35,15 +35,15 @@ function LogFirstAvailable(books):void{
             break;
         }
     }
-    console.log("total books: " + cantofBooks );
-    console.log("First Available: "+ firtsAvailable);
+   console.log("total books: " + cantofBooks );
+   console.log("First Available: "+ firtsAvailable);
 }
 LogFirstAvailable(allBooks);////
 
 ///////////////
-function GetBookTitleByCategory(categoryFilter:Category): Array<string> {
+function GetBookTitleByCategory(categoryFilter:Category=Category.Fiction): Array<string> {
     
-    console.log("gettiing books in category: " + Category[categoryFilter]);
+   console.log("Gettiing books in Category: " + Category[categoryFilter]);
     
     const allBooks=GetAllOfBooks();
     const filteredTitles: string[]=[];
@@ -56,7 +56,7 @@ function GetBookTitleByCategory(categoryFilter:Category): Array<string> {
 
     return filteredTitles;        
 }
-const PoetryBooks = GetBookTitleByCategory(Category.Poetry);//////
+const HistoryBooks = GetBookTitleByCategory(Category.History);//////
 
 //////////////
 function LogBookTitles(titles:string[]):void{
@@ -64,8 +64,9 @@ function LogBookTitles(titles:string[]):void{
     for(let title of titles){
         console.log(title);
     }
-}
-LogBookTitles(PoetryBooks);//////
+} 
+LogBookTitles( HistoryBooks);//////
+
 
 
 

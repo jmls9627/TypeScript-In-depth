@@ -1,0 +1,18 @@
+{
+    "extends": "../tsconfig.base",
+    "compilerOptions": {
+        "removeComments": true,
+    //    "outFile": "../js/app.js"
+    "module": "CommonJS",
+   "moduleResolution":"Node",
+   "traceResolution": true,
+  
+    },
+
+"files": [    //ts to js
+    "./1-TypeScript_Basics.ts",
+    "./2-Functions.ts"
+]    
+
+
+}
