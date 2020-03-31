@@ -1,14 +1,10 @@
-class HelloWord{
-constructor(public message:string){}
-}
- var hello= new HelloWord("Wello Word");
- console.log(hello.message);
- ////////////////////////////////////
+import{Book} from './3-Interfaces';
+
  
- enum Category{ Biography, Poetry, Fiction, History, Children};
+ export enum Category{ Biography, Poetry, Fiction, History, Children};
 
 ////////////
- function GetAllOfBooks(){
+export function GetAllOfBooks():Book[]{
      let books =[
          {id: 1, title:"Reino de este Mundo", author:"Alejo Carpentier",available:true, category:Category.History },
          {id: 2, title:"Viaje al centro de la tierra", author:"Julio Verne",available:false, category:Category.Fiction },
@@ -41,7 +37,7 @@ function LogFirstAvailable(books=GetAllOfBooks()):void{
 LogFirstAvailable(allBooks);////
 
 ///////////////
-function GetBookTitleByCategory(categoryFilter:Category=Category.Fiction): Array<string> {
+export function GetBookTitleByCategory(categoryFilter:Category=Category.Fiction): Array<string> {
     
    console.log("Gettiing books in Category: " + Category[categoryFilter]);
     

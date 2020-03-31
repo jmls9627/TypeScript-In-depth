@@ -1,9 +1,14 @@
+import {GetBookTitleByCategory,Category,GetAllOfBooks}  from './1-TypeScript_Basics';
+import {Book,DamagedLogger, Author, Librarian} from './3-Interfaces';
 
+
+
+const allBooks = GetAllOfBooks();
 const biographyBooks = GetBookTitleByCategory(Category.Biography);
 biographyBooks.forEach((val,indx,arr)=>console.log(++indx + " - " + val));
 
 /////////
-function GetBookID(id:number){
+function GetBookID(id:number):Book{
     return allBooks.filter(book=> book.id===id)[0];
 }
 
@@ -41,7 +46,7 @@ return booksCheckedOut;
 let myBook:string[]= CheckOutBooks("thorne",1,3,4);
 myBook.forEach(title=> console.log(title));
 
-
+//////////////
 function GetTitles(author:string):string[];
 function GetTitles(available:boolean):string[];
 function GetTitles(bookProperty: any):string[]{
@@ -70,6 +75,37 @@ return foundTitles;
 
 let Books=GetTitles('string|bool');
 Books.forEach(title=>console.log(title));
+
+
+
+function PrintBook(book:Book):void{
+    console.log(book.title +' by ' + book.author);
+}
+
+let myBook1:Book ={
+    id:5,
+    title:"Pride and Prejudice",
+    author:'Jane Austen',
+    available:true,
+    category:Category.Fiction,
+   markDamaged:(reason:string)=>console.log('Damaged: '+reason)
+  
+   //year:'1813',
+   //copies:3
+}
+
+//PrintBook(myBook1);
+//myBook1.markDamaged("missing page ...")
+
+let logDamage: DamagedLogger;
+logDamage=(damage:string)=>console.log('damage reported: ' + damage);
+logDamage("coffe stains");
+
+
+
+
+
+
 
 
 
