@@ -1,5 +1,5 @@
-import{Book} from './3-Interfaces';
-
+import{Book,DamagedLogger,Author,Librarian} from './3-Interfaces';
+import{UniversityLibrarian,ReferenceItem} from './4-Classes'
  
  export enum Category{ Biography, Poetry, Fiction, History, Children};
 

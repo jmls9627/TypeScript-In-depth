@@ -1,5 +1,6 @@
 import {GetBookTitleByCategory,Category,GetAllOfBooks}  from './1-TypeScript_Basics';
 import {Book,DamagedLogger, Author, Librarian} from './3-Interfaces';
+import { UniversityLibrarian, ReferenceItem,Encyclopedia } from './4-Classes';
 
 
 
@@ -77,11 +78,11 @@ let Books=GetTitles('string|bool');
 Books.forEach(title=>console.log(title));
 
 
-
+//////////////
 function PrintBook(book:Book):void{
     console.log(book.title +' by ' + book.author);
 }
-
+/************************INTERFACES******************** */
 let myBook1:Book ={
     id:5,
     title:"Pride and Prejudice",
@@ -101,6 +102,29 @@ let logDamage: DamagedLogger;
 logDamage=(damage:string)=>console.log('damage reported: ' + damage);
 logDamage("coffe stains");
 
+//***********************CLASSES- Using Interfaces******************** */
+let favoriteLibrarian:Librarian=new UniversityLibrarian();
+favoriteLibrarian.name="Jose";
+favoriteLibrarian.assistCustomer("Ray");
+
+//***********************CLASSES******************** */
+
+//let ref:  ReferenceItem= new ReferenceItem('new Facts and Figures',2010);
+//ref.printItem();
+//ref.publisher=('random data');
+//console.log(ref.publisher);
+
+let refbook: ReferenceItem=new Encyclopedia('World Pedia', 1900,10);
+refbook.printItem();
+
+/**********************using class expresion */
+let newspaper=class extends ReferenceItem {
+    printCitation():void{
+        console.log(`Newspaper: ${this.title}`);
+    }
+}
+let mypaper= new newspaper(`the gazette`,2016);
+mypaper.printCitation();
 
 
 
@@ -109,12 +133,29 @@ logDamage("coffe stains");
 
 
 
-//LogFirstAvailable();
-//biographyBooks.forEach(title=>console.log(title));
 
 
-//CreateCustomer("Pepone",23,"havana");
-//CreateCustomer("Lily");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /************************************************** */
 /*let x :number;
@@ -128,4 +169,10 @@ IdGenarator=(name:string, id:number)=>{
 
 let myID: string=IdGenarator('JM',23);
 console.log(myID);
-*/
+//LogFirstAvailable();
+//biographyBooks.forEach(title=>console.log(title));
+
+
+//CreateCustomer("Pepone",23,"havana");
+//CreateCustomer("Lily");
+*//************************************************** */
