@@ -1,6 +1,14 @@
-import{Book,DamagedLogger,Author,Librarian} from './3-Interfaces';
-import{UniversityLibrarian,ReferenceItem} from './4-Classes'
- 
+import{Book,logger,Author,Librarian} from './3-Interfaces';
+import{UniversityLibrarian,ReferenceItem} from './4-Classes';
+import{ CalcLateFee as calFee, MaxBooksAllowed as MaxB} from '../lib/UtilityFunction'
+import refBook from './encyclopedia'; 
+
+let reference =new refBook('fact Book', 2016, 1);
+
+
+//let fee = calFee(5);
+//let max=MaxB(12);
+
  export enum Category{ Biography, Poetry, Fiction, History, Children};
 
 ////////////

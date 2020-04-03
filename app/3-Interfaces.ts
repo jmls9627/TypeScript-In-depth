@@ -31,4 +31,4 @@ interface Book{
    }
 
 
- export {Book, DamagedLogger,Author,Librarian}; 
+ export {Book, DamagedLogger as logger,Author,Librarian}; 
