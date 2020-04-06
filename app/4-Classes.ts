@@ -44,7 +44,20 @@ abstract class ReferenceItem{
      abstract printCitation():void;
 }
 
-////////////
+//////////// generic
+
+ import default class Shelf <T> {
+
+    private _item:Array<T>=new Array<T>();
+
+    addItem(item:T):void{
+        this._item.push(item);
+    }
+
+    getfirs():T{
+        return this._item[0];
+    }
+}
 
 
 export{UniversityLibrarian,ReferenceItem};

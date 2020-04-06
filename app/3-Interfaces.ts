@@ -30,5 +30,9 @@ interface Book{
       assistCustomer:(custName:string)=>void;
    }
 
+   interface Magazine{
+      title:string;
+      publisher:string;
+   }
 
- export {Book, DamagedLogger as logger,Author,Librarian}; 
+ export {Book, DamagedLogger as logger,Author,Librarian,Magazine}; 

@@ -1,7 +1,5 @@
  
-
-
-    export function CalcLateFee(daysLate:number):number{
+   export function CalcLateFee(daysLate:number):number{
         return daysLate*.25;
     }
 
@@ -18,3 +16,7 @@ function privatefunc():void{
 }
 
 
+export function Purge<T>(inventory:Array<T>):Array<T>{
+    //implement fancy logic here...
+    return inventory.splice(2,inventory.length);
+}
